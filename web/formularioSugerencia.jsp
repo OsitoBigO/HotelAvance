@@ -77,113 +77,85 @@
   </div>
     
 </nav>  
-        <br><br><br><br><br><br><br>
-            <div class="slider-container">
-                <div class="slider position">
-                    <div class="slider-overlay"></div>
-                    <div class="slider-content">
-                        <h1>Bienvenido al Hotel Paradise</h1>
-                        <p>Su escapada perfecta</p>
-                        <a href="#hab" class="btn">Explore</a>
-                    </div>
-                </div>
+       
+        <h1><strong>Formulario de Sugerencias - Hotel Paradise</strong></h1>
+        <p>Por favor, déjanos tus sugerencias para mejorar nuestros servicios. Tu opinión es importante para nosotros.</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Formulario de Sugerencias
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Formulario de Sugerencias - Hotel Paradise</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                    <form action="<%= request.getContextPath()%>/ControladorSugerencias" method="post" class="formulario" id="formSugerencias">
+                        <fieldset>
+                            <legend>Formulario de Sugerencias</legend>
+                            <label>Codigo</label>
+                            <input type="text" name="codigo" value="${codigo}"readonly />
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre"
+                                   placeholder="Nombre" value="${nombre}"/>
+                            <label for="correo">Correo</label>
+                            <input type="text" name="correo" id="correo" value="${correo}"
+                                   placeholder="Correo"/>
+                            <label for="infosuge">Informacion de la Sugerencia</label>
+                            <input type="text" name="infosuge" id="infosuge" value="${infosuge}"
+                                   />
+                            <label for="TipoSugerencia">Tipo de Sugerencia</label>
+                            <div class="combo-select">
+                                <select id="TipoSugerencia" name="cboSugerencia">
+                                <c:forEach var="itemTipoSuge" items="${listamTipoSugerencia}">
+                                    <option value="${itemTipoSuge.idtiposuge}"  ${tiposugerencia == itemTipoSuge.idtiposuge ? "selected" : ""} >${itemTipoSuge.nombre}</option>                        
+                                </c:forEach>
+                                </select>    
+                                <i></i>
+                            </div>
+                            <input type="hidden" value="Registrar" name="accion"/>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary" form="formSugerencias">Registrar</button>                    
+                            </div>                
+                        </fieldset>
+
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                    </form>
+                </div>         
             </div>
-
-      
-
-
-
-        <section>
-            <!-- INTRO-CATALOGO -->
-            <div class="intro" id="hab">
-                <h1>Nuestras Habitaciones</h1>
-                <p>Explora nuestra selección de habitaciones y suites para una experiencia de lujo en el Hotel Paradise.</p>
-            </div>
-
-            <!-- CATALOGO -->
-            <div class="catalog-container">
-                <div class="catalog-card">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/XsQ7PInKiCE?si=e2SkNCcETBIaoJH9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                    <div class="card-content">
-                        <h2>Estandar</h2>
-                        <p>Una habitación cómoda para una estancia relajante.</p>
-                    </div>
-                </div>
-                <div class="catalog-card">
-                    <div class="video-container">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2FHotelParadise2016%2Fvideos%2F625523025437310%2F&show_text=false&width=560&t=0" width="560" height="316" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="card-content">
-                        <h2>Suite Junior</h2>
-                        <p>Una habitación espaciosa con disponibilidad de dos camas.</p>
-                    </div>
-                </div>
-                <div class="catalog-card">
-                    <div class="video-container">
-                        <iframe src="https://www.facebook.com/plugins/video.php?height=316&href=https%3A%2F%2Fwww.facebook.com%2FHotelParadise2016%2Fvideos%2F1702847646750228%2F&show_text=false&width=560&t=0" width="560" height="316" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                    </div>
-                    <div class="card-content">
-                        <h2>Suite Deluxe</h2>
-                        <p>Una suite de lujo que incluye bañeras modernas y una pequeña sala con todas las comodidades que necesita.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Blog Section -->
-        <!-- INTRO-blog -->
-        <div class="intro2" id="blog">
-            <h1>BLOG</h1>
-            <p>Bienvenido a la sección de noticias de Paradise Hotel. Aquí encontrarás las últimas
-                novedades sobre nuestro hotel.</p>
+          </div>
         </div>
-
-        <section class="blog-section">
-
-            <article class="blog-post">
-
-                
-                 <img src="IMAGES/PRINCIPAL/aniversary.jpeg"  alt="Blog Post 1">
-
-                <h2>Paradise Hotel celebra su 15 aniversario</h2>
-                <p>
-                    ¡Estamos emocionados de compartir que Hotel Paradise está celebrando 15 años
-                    de hospitalidad excepcional! Únete a nosotros para conmemorar este hito especial
-                    con sorpresas, descuentos exclusivos y eventos emocionantes durante todo el año.
-                </p>
-
-            </article>
-
-            <article class="blog-post">
-                 
-                 <img src="IMAGES/PRINCIPAL/summer.jpeg" alt="Blog Post 2">
-                <h2>Oferta de Temporada de Verano</h2>
-                <p>
-                    ¿Listo para un verano inolvidable? Descubre nuestras ofertas especiales de temporada
-                    de verano en Hotel Paradise. Disfruta de tarifas con descuento, actividades bajo el sol
-                    y acceso exclusivo a nuestra carta de menu. ¡Reserva ahora y sumérgete en la diversión
-                    del verano!
-                </p>
-
-            </article>
-            <article class="blog-post">
-                
-                <img src="IMAGES/PRINCIPAL/escapada.jpg"  alt="Blog Post 3">
-                <h2>Escapada romantica</h2>
-                <p>
-                    ¿Estás planeando una escapada romántica para celebrar tu aniversario? En Hotel Paradise, hemos
-                    preparado una selección especial de las tres reservas más destacadas para ayudarte a crear recuerdos
-                    inolvidables en tu ocasión especial. Desde cenas íntimas hasta relajantes días de spa, aquí están nuestras
-                    principales recomendaciones:
-                </p>
-
-            </article>
-        </section>
-        <br><br>
+       
+            <c:if test="${requestScope.mensaje != null}">
+                <script>
+                    toastr.options = {
+                        "closeButton": true,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": false,
+                        "timeOut": "2000",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    };
+                    <c:if test="${requestScope.result=='ok'}">                                            
+                        toastr.success('${requestScope.mensaje}', toastr.options);                       
+                    </c:if>
+                    <c:if test="${requestScope.result=='error'}">                        
+                        toastr.error('${requestScope.mensaje}', toastr.options);                       
+                    </c:if>
+                    <c:if test="${requestScope.result=='info'}">                                            
+                        toastr.info('${requestScope.mensaje}', toastr.options);                       
+                    </c:if>
+                </script>
+            </c:if>
+                <%@include file="listaSugerencia.jsp"%>
+   
+    <br><br><br><br>
+       
         <footer>
         <div class="footer-container">
             <div class="contact-info">

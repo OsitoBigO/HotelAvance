@@ -27,11 +27,12 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Controlador?accion=home">Home</a>
+          <a class="nav-link active" aria-current="page" href="Controlador?accion=home">Cuartos</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="Controlador?accion=Carrito"><i class="fas fa-cart-plus">(<label style="color: brown">${contador}</label>)</i> Carrito</a>
         </li>
+
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Selección Opciones
@@ -50,10 +51,7 @@
           <a class="nav-link disabled" aria-disabled="true">Link</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
         <ul>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,7 +85,7 @@
                         <img src="ControladorIMAGEN?id=${p.getId()}" width="200" height="180"> 
                     </div>
                     <div class="card-footer text-center">
-                        <label>Descripcion</label>
+                        <label>${p.getDescripcion()}</label>
                         <div>
                             <a href="Controlador?accion=AgregarCarrito&id=${p.getId()}" class="btn btn-outline-info">Agregar a Carrito</a>
                             <a href="Controlador?accion=Comprar&id=${p.getId()}" class="btn btn-danger">Comprar</a>

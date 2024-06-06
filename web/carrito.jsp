@@ -17,27 +17,30 @@
 
     </head>
     <body>
-              <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="">Hotel Paradise</a>
+    <a class="navbar-brand" href="layout.jsp">Hotel Paradise</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Controlador?accion=home">Home</a>
+          <a class="nav-link active" aria-current="page" href="Controlador?accion=home">Cuartos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="Controlador?accion=Carrito">Seguir Comprando</a>
+            <a class="nav-link" href="Controlador?accion=Carrito"><i class="fas fa-cart-plus">(<label style="color: brown">${contador}</label>)</i> Carrito</a>
         </li>
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Inicar Sesion
+            Selección Opciones
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Productos</a></li>
+            <li><a class="dropdown-item" href="#">Formulario Sugerencias</a></li>
+            <li><a class="dropdown-item" href="#">Libro de reclamaciones</a></li>
+            <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
+            <li><a class="dropdown-item" href="#">Contáctenos</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
@@ -46,10 +49,20 @@
           <a class="nav-link disabled" aria-disabled="true">Link</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+        <ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Inicio de Sesión
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Iniciar Sesión</a></li>
+            <li><a class="dropdown-item" href="#">Registrarse</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Salir de la Sesion</a></li>
+          </ul>
+        </li>
+        </ul>
         
     </div>
 
